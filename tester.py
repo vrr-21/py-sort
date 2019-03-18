@@ -1,4 +1,4 @@
-from quick_sort import quick_sort
+from heap_sort import heap_sort
 import sys
 import timeit
 
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     if print_nums:
         print("List before sorting: "+str(ip_list))
     start = timeit.default_timer()
-    quick_sort(ip_list, 0, n - 1)
+    heap_sort(ip_list)
     stop = timeit.default_timer()
     if print_nums:
         print("List after sorting: "+str(ip_list))
