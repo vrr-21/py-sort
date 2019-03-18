@@ -1,4 +1,4 @@
-from insertion_sort import insertion_sort
+from merge_sort import merge_sort
 import sys
 import timeit
 
@@ -12,7 +12,7 @@ if __name__ == "__main__":
     ip_list = load_file("random_files/test-file10.txt")
     print("List before sorting: "+str(ip_list))
     start = timeit.default_timer()
-    insertion_sort(ip_list)
+    merge_sort(ip_list)
     stop = timeit.default_timer()
     print("List after sorting: "+str(ip_list))
     print("Runtime: "+str(stop - start))
