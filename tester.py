@@ -1,4 +1,4 @@
-from merge_sort import merge_sort
+from quick_sort import quick_sort
 import sys
 import timeit
 
@@ -9,10 +9,18 @@ def load_file(f):
     return list(map(int, str_array))
 
 if __name__ == "__main__":
+    print_nums = False
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "--print":
+            print_nums = True
     ip_list = load_file("random_files/test-file10.txt")
-    print("List before sorting: "+str(ip_list))
+    n = len(ip_list)
+    print("Length of list: "+str(n))
+    if print_nums:
+        print("List before sorting: "+str(ip_list))
     start = timeit.default_timer()
-    merge_sort(ip_list)
+    quick_sort(ip_list, 0, n - 1)
     stop = timeit.default_timer()
-    print("List after sorting: "+str(ip_list))
+    if print_nums:
+        print("List after sorting: "+str(ip_list))
     print("Runtime: "+str(stop - start))
