@@ -1,4 +1,4 @@
-from bubble_sort import bubble_sort
+from selection_sort import selection_sort
 import sys
 import timeit
 
@@ -9,10 +9,10 @@ def load_file(f):
     return list(map(int, str_array))
 
 if __name__ == "__main__":
-    ip_list = load_file("test-file10.txt")
+    ip_list = load_file("random_files/test-file100.txt")
     print("List before sorting: "+str(ip_list))
     start = timeit.default_timer()
-    bubble_sort(ip_list)
+    selection_sort(ip_list)
     stop = timeit.default_timer()
     print("List after sorting: "+str(ip_list))
     print("Runtime: "+str(stop - start))
