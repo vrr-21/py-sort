@@ -1,5 +1,7 @@
-from simple_sort import simple_sort
+from bubble_sort import bubble_sort
 import sys
+import timeit
+
 def load_file(f):
     file_reader = open(f, 'r')
     s = file_reader.readline()
@@ -7,7 +9,10 @@ def load_file(f):
     return list(map(int, str_array))
 
 if __name__ == "__main__":
-    ip_list = load_file("test-file10000.txt")
+    ip_list = load_file("test-file10.txt")
     print("List before sorting: "+str(ip_list))
-    simple_sort(ip_list)
+    start = timeit.default_timer()
+    bubble_sort(ip_list)
+    stop = timeit.default_timer()
     print("List after sorting: "+str(ip_list))
+    print("Runtime: "+str(stop - start))
