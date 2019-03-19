@@ -13,7 +13,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         if sys.argv[1] == "--print":
             print_nums = True
-    ip_list = load_file("random_files/test-file10.txt")
+    ip_list = load_file("random_files/test-file1000000.txt")
     n = len(ip_list)
     print("Length of list: "+str(n))
     if print_nums:
